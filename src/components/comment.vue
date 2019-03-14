@@ -43,166 +43,29 @@
   </div>
 
     <ul class="mui-table-view">
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
+      <li class="mui-table-view-cell mui-media" v-for="item in newslist" :key="item.id">
+        <router-link :to="'/comment/newsList' + item.id">
           <img class="mui-media-object mui-pull-left" src="../assets/pic/p.png">
           <div class="mui-media-body">
-            <p class="Large">五种果汁喝出幸福</p>
+            <p class="Large">{{ item.title }}</p>
             <p class="mui-ellipsis">吐血推荐五中种让你喝吐血的果汁</p>
             <div class="dataAndzan">
-              <p>2017/5/23</p>
+              <p>{{ item.add_time | dataFormat('YYYY-MM-DD')}}</p>
               <div class="dataAndzan">
                 <img class="dianzan" src="../assets/pic/icon2.jpg">
-                <p>点赞</p>
+                <p>点赞: {{item.click}} </p>
               </div>
             </div>
           </div>
-        </a>
+        </router-link>
       </li>
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img class="mui-media-object mui-pull-left" src="../assets/pic/p.png">
-          <div class="mui-media-body">
-            <p class="Large">五种果汁喝出幸福</p>
-            <p class="mui-ellipsis">吐血推荐五中种让你喝吐血的果汁</p>
-            <div class="dataAndzan">
-              <p>2017/5/23</p>
-              <div class="dataAndzan">
-                <img class="dianzan" src="../assets/pic/icon2.jpg">
-                <p>点赞</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img class="mui-media-object mui-pull-left" src="../assets/pic/p.png">
-          <div class="mui-media-body">
-            <p class="Large">五种果汁喝出幸福</p>
-            <p class="mui-ellipsis">吐血推荐五中种让你喝吐血的果汁</p>
-            <div class="dataAndzan">
-              <p>2017/5/23</p>
-              <div class="dataAndzan">
-                <img class="dianzan" src="../assets/pic/icon2.jpg">
-                <p>点赞</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img class="mui-media-object mui-pull-left" src="../assets/pic/p.png">
-          <div class="mui-media-body">
-            <p class="Large">五种果汁喝出幸福</p>
-            <p class="mui-ellipsis">吐血推荐五中种让你喝吐血的果汁</p>
-            <div class="dataAndzan">
-              <p>2017/5/23</p>
-              <div class="dataAndzan">
-                <img class="dianzan" src="../assets/pic/icon2.jpg">
-                <p>点赞</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img class="mui-media-object mui-pull-left" src="../assets/pic/p.png">
-          <div class="mui-media-body">
-            <p class="Large">五种果汁喝出幸福</p>
-            <p class="mui-ellipsis">吐血推荐五中种让你喝吐血的果汁</p>
-            <div class="dataAndzan">
-              <p>2017/5/23</p>
-              <div class="dataAndzan">
-                <img class="dianzan" src="../assets/pic/icon2.jpg">
-                <p>点赞</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img class="mui-media-object mui-pull-left" src="../assets/pic/p.png">
-          <div class="mui-media-body">
-            <p class="Large">五种果汁喝出幸福</p>
-            <p class="mui-ellipsis">吐血推荐五中种让你喝吐血的果汁</p>
-            <div class="dataAndzan">
-              <p>2017/5/23</p>
-              <div class="dataAndzan">
-                <img class="dianzan" src="../assets/pic/icon2.jpg">
-                <p>点赞</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img class="mui-media-object mui-pull-left" src="../assets/pic/p.png">
-          <div class="mui-media-body">
-            <p class="Large">五种果汁喝出幸福</p>
-            <p class="mui-ellipsis">吐血推荐五中种让你喝吐血的果汁</p>
-            <div class="dataAndzan">
-              <p>2017/5/23</p>
-              <div class="dataAndzan">
-                <img class="dianzan" src="../assets/pic/icon2.jpg">
-                <p>点赞</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img class="mui-media-object mui-pull-left" src="../assets/pic/p.png">
-          <div class="mui-media-body">
-            <p class="Large">五种果汁喝出幸福</p>
-            <p class="mui-ellipsis">吐血推荐五中种让你喝吐血的果汁</p>
-            <div class="dataAndzan">
-              <p>2017/5/23</p>
-              <div class="dataAndzan">
-                <img class="dianzan" src="../assets/pic/icon2.jpg">
-                <p>点赞</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img class="mui-media-object mui-pull-left" src="../assets/pic/p.png">
-          <div class="mui-media-body">
-            <p class="Large">五种果汁喝出幸福</p>
-            <p class="mui-ellipsis">吐血推荐五中种让你喝吐血的果汁</p>
-            <div class="dataAndzan">
-              <p>2017/5/23</p>
-              <div class="dataAndzan">
-                <img class="dianzan" src="../assets/pic/icon2.jpg">
-                <p>点赞</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-          <img class="mui-media-object mui-pull-left" src="../assets/pic/p.png">
-          <div class="mui-media-body">
-            <p class="Large">五种果汁喝出幸福</p>
-            <p class="mui-ellipsis">吐血推荐五中种让你喝吐血的果汁</p>
-            <div class="dataAndzan">
-              <p>2017/5/23</p>
-              <div class="dataAndzan">
-                <img class="dianzan" src="../assets/pic/icon2.jpg">
-                <p>点赞</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </li>
+  
+ 
+ 
+
+   
+ 
+
     </ul>
   </div>
 </template>
@@ -212,10 +75,15 @@ import { Toast } from "mint-ui";
 export default {
   name: "comment",
   data() {
-    return {};
+    return {
+      newslist:[]
+    };
   },
   created() {
     // this.getLunbotu();
+    this.getNewsList();
+    
+    
   },
   methods: {
     // getLunbotu() {
@@ -230,6 +98,20 @@ export default {
     //       }
     //     });
     // }
+ 
+
+
+    getNewsList() {
+      this.$http.get('api/getnewslist').then(result=> {
+        if(result.body.status === 0){
+          
+          this.newslist = result.body.message
+
+        }else{
+          Toast('获取列表失败，请检查网络连接配置')
+        }
+      })
+    }
   }
 };
 </script>

@@ -20,7 +20,7 @@
     <div>
       <ul id="oneLine">
         <li>
-          <router-link to="/logIn">
+          <router-link to="/photoList">
             <img src="../assets/pic/icon.jpg" alt>
             <div class="mui-media-body">最新推荐</div>
           </router-link>

@@ -14,10 +14,12 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/vue-fontawesome": "^0.1.5",
     "mint-ui": "^2.2.13",
+    "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "vue": "^2.6.8",
+    "vue-amap": "^0.5.8",
     "vue-baidu-map": "^0.21.18",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1"

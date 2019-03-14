@@ -7,13 +7,14 @@ import order from '@/components/order.vue'
 import us from '@/components/us.vue'
 import intro from '../components/chirdren/intro.vue'
 import advices from '../components/chirdren/advices.vue'
+import newsList from '@/components/newsList.vue'
+import photoList from '@/components/photoList.vue'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path:'/',
-      redirect:'order'
+  routes: [{
+      path: '/',
+      redirect: 'order'
     },
     {
       path: '/comment',
@@ -34,22 +35,32 @@ export default new Router({
       path: '/us',
       name: 'us',
       component: us,
-      children:[
-        {
-          path:'/us',
-          redirect:'intro'
+      children: [{
+          path: '/us',
+          redirect: 'intro'
         },
         {
-        path:'intro',
-        component:intro
-      },
-      {
-        path:'advices',
-        component:advices
-      }
-    ]
+          path: 'intro',
+          component: intro
+        },
+        {
+          path: 'advices',
+          name: advices,
+          component: advices
+        },
+      ]
+    },
+    {
+      path: '/comment/newsList:id',
+      name: 'newsList',
+      component: newsList
+    },
+    {
+      path: '/photoList',
+      name: photoList,
+      component: photoList
     },
 
   ],
-  linkActiveClass:'mui-active'
+  linkActiveClass: 'mui-active'
 })

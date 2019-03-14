@@ -6,7 +6,8 @@
       开发和研究新派融合菜，定期推出特色菜品，聘请专业艺术团队研发造型，
       让茉莉每一款菜品成为一件艺术品，让客人感受别样的饮食文化。
     </h1>
-    <baidu-map class="map"></baidu-map>
+  
+    <div id="map"></div>
   </div>
 </template>
 
@@ -14,7 +15,9 @@
 export default {
   name: "intro",
   data() {
-    return {};
+    return {
+
+    };
   }
 };
 </script>
@@ -34,7 +37,8 @@ export default {
 /* 
  */
 
-.map {
+#map {
+  border: 1px solid black;
   width: 93vw;
   height: 70vw;
   display: flex;
