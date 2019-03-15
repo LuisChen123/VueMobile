@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <ul>
-      <li v-for="item in list" :key="item.id">
+    <ul class="photoList">
+      <router-link v-for="item in list" :key="item.id" :to ="'/order/photolist/photodetail' + item.id" tag="li">
         <img v-lazy="item.img_url">
         <div class="info">
           <h1 class="info-title">
@@ -9,7 +9,7 @@
             <h1 class="info-body">{{ item.zhaiyao }}</h1>
           </h1>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -45,37 +45,45 @@ export default {
 * {
   touch-action: pan-y;
 }
-.hello {
-  margin: 0 5vw;
-  li {
-    margin-bottom: 1vw;
+.photoList {
+  list-style: none;
+  margin: 0;
+  padding: 4vw;
+  padding-bottom: 0;
+  li{
+    background-color: #ccc;
+    text-align: center;
+    margin-bottom: 3vw;
     box-shadow: 0 0 2vw #999;
     position: relative;
-    
-    img {
+    img{
       width: 100%;
-      height: auto;
-      
       vertical-align: middle;
+
     }
     img {
       [lazy="loading"] {
         width: 40px;
-        height: 100px;
+        height: 300px;
         margin: auto;
       }
     }
-    .info {
-      .info-title {
-        color: white;
-        text-align: left;
+    .info{
+      font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+      color: white;
+      text-align: left;
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.4);
+      max-height: 25vw;
+      
+      .info-title{
         font-size: 4vw;
-        position: abosolute;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.4)
+        line-height: 10vw;
       }
-      .info-body {
-        font-size: 2vw;
+      .info-body{
+        font-size: 3vw;
+        line-height: 4vw;
       }
     }
   }

@@ -9,6 +9,7 @@ import intro from '../components/chirdren/intro.vue'
 import advices from '../components/chirdren/advices.vue'
 import newsList from '@/components/newsList.vue'
 import photoList from '@/components/photoList.vue'
+import photodetail from '@/components/photodetail.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -60,6 +61,11 @@ export default new Router({
       name: photoList,
       component: photoList
     },
+    {
+      path: '/photodetail',
+      name: photodetail,
+      component: photodetail
+    }
 
   ],
   linkActiveClass: 'mui-active'
