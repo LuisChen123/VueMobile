@@ -21,14 +21,15 @@ Vue.http.options.emulateHTTP = true;
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { Swipe, SwipeItem, Search,Field,Button } from 'mint-ui';
+// import { Swipe, SwipeItem, Search,Field,Button,Lazyload  } from 'mint-ui';
 import moment from 'moment';
-
+// Vue.use(Lazyload);
+import 'mint-ui/lib/style.css'
 
 library.add(faUserSecret)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.http.headers.common['Authorization'] = 'Basic YXBpOnBhc3N3b3Jk';
-Vue.component(Swipe.name, Swipe,SwipeItem.name, SwipeItem,Search.name, Search,Field.name, Field, Button.name, Button );
+// Vue.component(Swipe.name, Swipe,SwipeItem.name, SwipeItem,Search.name, Search,Field.name, Field, Button.name, Button );
 
 Vue.config.productionTip = false
 
