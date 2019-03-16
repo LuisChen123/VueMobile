@@ -20,15 +20,15 @@
     <div>
       <ul id="oneLine">
         <li>
-          <router-link to="/photoList">
+          <router-link to="/order/photoList">
             <img src="../assets/pic/icon.jpg" alt>
             <div class="mui-media-body">最新推荐</div>
           </router-link>
         </li>
         <li>
-          <router-link to="/logIn">
+          <router-link to="/order/placeOrder">
             <img src="../assets/pic/icon1.jpg" alt>
-            <div class="mui-media-body">热门菜谱</div>
+            <div class="mui-media-body">商品购买</div>
           </router-link>
         </li>
         <li>

@@ -11,11 +11,11 @@ import 'mint-ui/lib/style.css'
 import VueResource from 'vue-resource'
 import '@/assets/css/reset.css'
 import VueAMap from 'vue-amap';
-
+import VuePreview from 'vue2-preview'
 Vue.use(MintUI)
 Vue.use(VueResource)
 Vue.use(VueAMap);
-
+Vue.use(VuePreview)
 Vue.http.options.root = 'http://www.liulongbin.top:3005';
 Vue.http.options.emulateHTTP = true;
 import { library } from '@fortawesome/fontawesome-svg-core'

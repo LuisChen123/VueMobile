@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <ul class="photoList">
-      <router-link v-for="item in list" :key="item.id" :to ="'/order/photolist/photodetail' + item.id" tag="li">
+      <router-link v-for="item in list" :key="item.id" :to ="'photolist/photodetail/' + item.id" tag="li">
         <img v-lazy="item.img_url">
         <div class="info">
           <h1 class="info-title">

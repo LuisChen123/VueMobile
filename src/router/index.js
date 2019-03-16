@@ -10,6 +10,7 @@ import advices from '../components/chirdren/advices.vue'
 import newsList from '@/components/newsList.vue'
 import photoList from '@/components/photoList.vue'
 import photodetail from '@/components/photodetail.vue'
+import placeOrder from '@/components/placeOrder.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -52,19 +53,24 @@ export default new Router({
       ]
     },
     {
-      path: '/comment/newsList:id',
+      path: '/comment/newsList/:id',
       name: 'newsList',
       component: newsList
     },
     {
-      path: '/photoList',
+      path: '/order/photoList',
       name: photoList,
       component: photoList
     },
     {
-      path: '/photodetail',
+      path: '/order/photoList/photodetail/:id',
       name: photodetail,
       component: photodetail
+    },
+    {
+      path: '/order/placeOrder',
+      name: placeOrder,
+      component: placeOrder
     }
 
   ],
