@@ -9,7 +9,7 @@
       <div class="cmt-item" v-for="(item,i) in comments" :key="item.add_time">
         <div class="cmt-title">
           第{{ i+1 }}楼&nbsp;&nbsp;用户：{{ item.user_name }}&nbsp;&nbsp;发表时间：{{ item.add_time | dataFormat}}
-          <div class="cmt-body">{{ item.content === "'undefined' ? '此用户很懒，什么都没说'" }}</div>
+          <div class="cmt-body">{{ item.content === 'undefined' ? '此用户很懒，什么都没说':item.content }}</div>
         </div>
       </div>
     </div>
@@ -37,10 +37,9 @@ export default {
   methods: {
     getComments() {
       this.$http
-        .get("api/getcomments" + this.id + "?pageindex=" + this.pageIndex)
+        .get("api/getcomments/" + this.id + "?pageindex=" + this.pageIndex)
         .then(result => {
           if (result.body.status === 0) {
-            console.log("这是getcomments" + result);
             // this.comments = result.body.message;
             this.comments = this.comments.concat(result.body.message); //加载更多评论，而且不覆盖上一页的评论
           } else {
@@ -55,10 +54,12 @@ export default {
     postComment() {
       if (this.msg.trim() === 0) {
         return Toast("评论不能为空");
+      } else {
+        console.log(this.msg.trim());
       }
 
       this.$http
-        .post("api/postcomment/:" + this.id, { content: this.msg.trim() })
+        .post("api/postcomment/" + this.id, { content: this.msg.trim() })
         .then(function(result) {
           var cmt = {
             user_name: "匿名用户",
@@ -67,8 +68,7 @@ export default {
           };
           this.comments.unshift(cmt);
           this.msg = "";
-        })
-        
+        });
     }
   },
   props: ["id"]

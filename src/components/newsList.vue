@@ -5,9 +5,7 @@
       <span>发表时间：{{ newsinfo.add_time | dataFormat}}</span>
       <span>点击次数：{{ newsinfo.click }}</span>
     </p>
-
     <hr id="aLine">
-
     <div class="content" v-html="newsinfo.content"></div>
     <comment-box :id="this.id"></comment-box>
   </div>
@@ -33,7 +31,7 @@ export default {
       this.$http.get('api/getnew/' +  this.id).then(
         result =>{
           if(result.body.status === 0){
-            console.log("这是getnews的本体" +result.body)
+            console.log(this.id)
             this.newsinfo = result.body.message[0];
           }
           else{

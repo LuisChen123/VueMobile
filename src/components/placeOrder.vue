@@ -1,56 +1,49 @@
 <template>
   <div class="goods-list">
-   <div class="goods-item">
-     <img src="../assets/pic/detail.png" alt="">
-     <h1 class="title">小米手机Note16 青春版</h1>
+   <div class="goods-item" v-for="item in goodsList" :key="item.id">
+     <img :src="item.img_url" alt="">
+     <h1 class="title">{{ item.title}}</h1>
      <div class="info">
        <p class="price">
-         <span class="new">￥2199</span>
-         <span class="old">￥1999</span>
+         <span class="new">￥{{item.sell_price}}</span>
+         <span class="old">￥{{item.market_price}}</span>
        </p>
        <p class="sell">
          <span>热卖中</span>
-         <span>剩60件</span>
+         <span>剩{{ item.stock_quantity}}件</span>
        </p>
      </div>
    </div>
-   <div class="goods-item">
-     <img src="../assets/pic/detail.png" alt="">
-     <h1 class="title">小米手机Note16 青春版</h1>
-     <div class="info">
-       <p class="price">
-         <span class="new">￥2199</span>
-         <span class="old">￥1999</span>
-       </p>
-       <p class="sell">
-         <span>热卖中</span>
-         <span>剩60件</span>
-       </p>
-     </div>
-   </div>
-   <div class="goods-item">
-     <img src="../assets/pic/detail.png" alt="">
-     <h1 class="title">小米手机Note16 青春版</h1>
-     <div class="info">
-       <p class="price">
-         <span class="new">￥2199</span>
-         <span class="old">￥1999</span>
-       </p>
-       <p class="sell">
-         <span>热卖中</span>
-         <span>剩60件</span>
-       </p>
-     </div>
-   </div>
+
+
   </div>
 </template>
 
 <script>
+import { Toast } from "mint-ui";
 export default {
   name: "placeOrder",
   data() {
-    return {};
-  }
+    return {
+      pageindex:1,
+      goodsList:[],
+
+    };
+  },
+  created(){
+    this.getGoodList();
+  },
+  methods: {
+      getGoodList(){
+        this.$http.get('api/getgoods?pageindex' + this.pageindex).then(result=>{
+          if(result.body.status === 0){
+            this.goodsList = result.body.message;
+          }else{
+            Toast('信息获取失败，请检查网络设置')
+          }
+        })
+      }
+    }
 };
 </script>
 

@@ -54,9 +54,10 @@ export default {
   },
   methods: {
     getphotoInfo() {
-      this.$http.get("api/getimageInfo" + this.id).then(result => {
+      this.$http.get("api/getimageInfo/" + this.id).then(result => {
         if (result.body.status === 0) {
           this.photoinfo = result.body.message[0];
+          console.log(this.id)
         } else {
           Toast("图片传输出错，请检查设置");
         }
